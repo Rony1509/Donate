@@ -8,6 +8,7 @@ import Notification from "@/server/models/Notification";
 import Feedback from "@/server/models/Feedback";
 
 export async function POST() {
+  console.log("URI:", process.env.MONGODB_URI);
   try {
     await connectDB();
 
@@ -48,4 +49,3 @@ export async function POST() {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
-
